@@ -1,7 +1,7 @@
-// import axios from 'axios';
-// import Notiflix from 'notiflix'; 
-// import { displayResults } from './index';
-// import { nextPage, currentPage } from './pagination.js';
+import axios from 'axios';
+import Notiflix from 'notiflix'; 
+import { displayResults } from './index';
+import { nextPage, currentPage } from './pagination.js';
 
 
 const BASE_URL = 'https://pixabay.com/api/';
