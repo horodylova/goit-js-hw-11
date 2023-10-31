@@ -19,7 +19,7 @@ searchForm.addEventListener('submit', function (event) {
   });
 
   export function displayResults(results) {
-    imageContainer.innerHTML = ''; 
+    // imageContainer.innerHTML = ''; 
   
     const photoCardsHTML = results.map((result) => {
       return `
@@ -35,8 +35,8 @@ searchForm.addEventListener('submit', function (event) {
       `;
     }).join('');
   
-    imageContainer.innerHTML = photoCardsHTML;
-    // imageContainer.insertAdjacentHTML('beforeend', photoCardsHTML);
+    // imageContainer.innerHTML = photoCardsHTML;
+    imageContainer.insertAdjacentHTML('beforeend', photoCardsHTML);
 
   }
 

@@ -54,24 +54,24 @@ export async function performSearch(searchQuery) {
   }
 }
 
-loadMoreButton.addEventListener('click', () => {
-  if (currentPage < maxPage) {
-    nextPage();
-  } else {
-    loadMoreButton.style.display = 'none';
-    Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-  }
-});
-// loadMoreButton.addEventListener('click', async () => {
+// loadMoreButton.addEventListener('click', () => {
 //   if (currentPage < maxPage) {
-//     nextPage(searchQuery); 
-//     await performSearch(searchQuery, currentPage);
-
-//     if (currentPage = maxPage) {
-//       loadMoreButton.style.display = 'none';
-//     }
+//     nextPage();
+//   } else {
+//     loadMoreButton.style.display = 'none';
+//     Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
 //   }
 // });
+loadMoreButton.addEventListener('click', async () => {
+  if (currentPage < maxPage) {
+    nextPage(searchQuery); 
+    await performSearch(searchQuery, currentPage);
+
+    if (currentPage === maxPage) {
+      loadMoreButton.style.display = 'none';
+    }
+  }
+});
 
 
 
