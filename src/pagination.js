@@ -4,9 +4,9 @@ import { performSearch } from './api';
 
 
 
-function nextPage() {
+function nextPage(searchQuery) {
   currentPage += 1;
-  performSearch(searchQuery, currentPage);
+  // performSearch(searchQuery, currentPage);
 }
 
 function resetPagination() {

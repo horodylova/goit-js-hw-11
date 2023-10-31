@@ -8,10 +8,10 @@ const BASE_URL = 'https://pixabay.com/api/';
 const BASE_KEY = '40349433-607a0eca23d92c4a115fc3307';
 const loadMoreButton = document.querySelector('.load-more');
 
-let maxPage;
+let maxPage = 1;
+import { searchQuery } from './index';
 
-
-export async function performSearch(searchQuery) {
+export async function performSearch() {
    try {
       const response = await axios.get(BASE_URL, {
         params: {
@@ -25,8 +25,6 @@ export async function performSearch(searchQuery) {
         },
       });
   
-      if (response.status === 200) {
-      
       const data = response.data;
   
         if (data.hits.length === 0) {
@@ -46,33 +44,27 @@ export async function performSearch(searchQuery) {
       } else {
         loadMoreButton.style.display = 'block';
       }
-    } else {
-      console.error('Mistake', response.status);
-    }
+    
   } catch (error) {
     console.error('Mistake', error);
   }
 }
 
-// loadMoreButton.addEventListener('click', () => {
-//   if (currentPage < maxPage) {
-//     nextPage();
-//   } else {
-//     loadMoreButton.style.display = 'none';
-//     Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
-//   }
-// });
+
 loadMoreButton.addEventListener('click', async () => {
-  if (currentPage < maxPage) {
-    nextPage(searchQuery); 
-    await performSearch(searchQuery, currentPage);
+
+  nextPage();
+  await performSearch();
+
 
     if (currentPage === maxPage) {
       loadMoreButton.style.display = 'none';
     }
-  }
 });
 
+
+
+  
 
 
   

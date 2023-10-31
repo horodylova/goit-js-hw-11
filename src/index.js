@@ -7,10 +7,11 @@ import { resetPagination} from './pagination.js';
 import { performSearch } from './api';
 import { setSearchQuery } from './pagination';
 
+export let searchQuery = null;
 
 searchForm.addEventListener('submit', function (event) {
     event.preventDefault();  
-    const searchQuery = searchInput.value;
+    searchQuery = searchInput.value;
     setSearchQuery(searchQuery); 
     performSearch(searchQuery);
 
@@ -19,8 +20,7 @@ searchForm.addEventListener('submit', function (event) {
   });
 
   export function displayResults(results) {
-    // imageContainer.innerHTML = ''; 
-  
+    // imageContainer.innerHTML = '';
     const photoCardsHTML = results.map((result) => {
       return `
         <div class="photo-card">
@@ -35,9 +35,11 @@ searchForm.addEventListener('submit', function (event) {
       `;
     }).join('');
   
-    // imageContainer.innerHTML = photoCardsHTML;
+  
     imageContainer.insertAdjacentHTML('beforeend', photoCardsHTML);
 
   }
+
+ 
 
  
