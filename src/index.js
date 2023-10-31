@@ -40,5 +40,4 @@ searchForm.addEventListener('submit', function (event) {
 
   }
 
-
  

@@ -64,7 +64,7 @@ loadMoreButton.addEventListener('click', () => {
 });
 // loadMoreButton.addEventListener('click', async () => {
 //   if (currentPage < maxPage) {
-//     nextPage(searchQuery); // Передайте поисковой запрос
+//     nextPage(searchQuery); 
 //     await performSearch(searchQuery, currentPage);
 
 //     if (currentPage = maxPage) {
