@@ -36,6 +36,9 @@ searchForm.addEventListener('submit', function (event) {
     }).join('');
   
     imageContainer.innerHTML = photoCardsHTML;
+    // imageContainer.insertAdjacentHTML('beforeend', photoCardsHTML);
+
   }
+
 
  

@@ -62,5 +62,17 @@ loadMoreButton.addEventListener('click', () => {
     Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
   }
 });
+// loadMoreButton.addEventListener('click', async () => {
+//   if (currentPage < maxPage) {
+//     nextPage(searchQuery); // Передайте поисковой запрос
+//     await performSearch(searchQuery, currentPage);
+
+//     if (currentPage = maxPage) {
+//       loadMoreButton.style.display = 'none';
+//     }
+//   }
+// });
+
+
 
   
