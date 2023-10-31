@@ -59,6 +59,8 @@ loadMoreButton.addEventListener('click', async () => {
 
     if (currentPage === maxPage) {
       loadMoreButton.style.display = 'none';
+      Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+
     }
 });
 
